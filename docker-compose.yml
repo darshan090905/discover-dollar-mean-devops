@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo:6
+    container_name: dd-mongodb
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    image: darshan0905/dd-backend:latest
+    container_name: dd-backend
+    restart: always
+    depends_on:
+      - mongodb
+
+  frontend:
+    image: darshan0905/dd-frontend:latest
+    container_name: dd-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
