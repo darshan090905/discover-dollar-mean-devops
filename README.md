@@ -93,7 +93,7 @@ This ensures the entire application is accessible via port 80.
 
 Application URL:
 
-http://98.93.96.56
+http://PUBLIC_IP
 
 --------------------------------------------------
 
